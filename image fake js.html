@@ -1,0 +1,37 @@
+<!-- html -->
+<div class="container">
+    <img src='https://scontent.fbfh5-1.fna.fbcdn.net/v/t1.0-9/10462479_990118141036568_2084383347692630579_n.jpg?oh=27c9ef6120dea4ccc9789f462c5c98c4&oe=57FBAA5F' width='64px' height='64px'/>
+</div>
+
+<div class="container">
+    <img src='https://scontent.fbfh5-1.fna.fbcdn.net/v/t1.0-9/10462479_990118141036568_2084383347692630579_n.jpg?oh=27c9ef6120dea4ccc9789f462c5c98c4&oe=57FBAA5F' width='128px' height='128px'/>
+</div>
+
+<div class="container">
+    <img src='https://scontent.fbfh5-1.fna.fbcdn.net/v/t1.0-9/10462479_990118141036568_2084383347692630579_n.jpg?oh=27c9ef6120dea4ccc9789f462c5c98c4&oe=57FBAA5F' width='277px' height='206px'/>
+</div>
+
+<!-- js -->
+$('.container img').replaceWith(function(i, v){
+	 console.log(this.width);
+    return $('<div/>', {
+        style: 'background-image: url(' + this.src + ');' + 
+        'width:' + this.width + 'px;' + 
+        'height:' + this.height + 'px;' ,
+        class: 'fakeImg'
+    })
+})
+
+<!-- css -->
+
+.container .fakeImg {
+    background: no-repeat center;
+    background-size: cover;    
+}
+
+.container
+{
+    display:inline-block;
+    border:2px solid red;
+    margin: 4px;
+}
